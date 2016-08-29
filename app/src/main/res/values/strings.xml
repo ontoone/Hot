@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Hot</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_channel">频道管理</string>
+    <string name="mansoul">Mansoul</string>
+    <string name="mail">soulxiang@gmail.com</string>
+    <string name="title_activity_photo_view">妹纸</string>
+    <string name="action_save">save</string>
+    <string name="action_share">share</string>
+    <string name="emptyData">当前数据为空</string>
+    <string name="retry">轻触重试…</string>
+</resources>

@@ -1,0 +1,72 @@
+[
+  {
+    "title": "头条",
+    "channelType": 0,
+    "isFix": 1,
+    "isSubscible": 1,
+    "url": "headline/T1348647909107"
+  },
+  {
+    "title": "体育",
+    "channelType": 0,
+    "isFix": 1,
+    "isSubscible": 1,
+    "url": "list/T1348649079062"
+  },
+  {
+    "title": "科技",
+    "channelType": 1,
+    "isFix": 1,
+    "isSubscible": 1,
+    "url": "list/T1348649580692"
+  },
+  {
+    "title": "NBA",
+    "channelType": 0,
+    "isFix": 0,
+    "isSubscible": 0,
+    "url": "list/T1348649145984"
+  },
+  {
+    "title": "军事",
+    "channelType": 0,
+    "isFix": 0,
+    "isSubscible": 0,
+    "url": "list/T1348648141035"
+  },
+  {
+    "title": "娱乐",
+    "channelType": 0,
+    "isFix": 0,
+    "isSubscible": 0,
+    "url": "list/T1348648517839"
+  },
+  {
+    "title": "电影",
+    "channelType": 0,
+    "isFix": 0,
+    "isSubscible": 0,
+    "url": "list/T1348648650048"
+  },
+  {
+    "title": "游戏",
+    "channelType": 0,
+    "isFix": 0,
+    "isSubscible": 0,
+    "url": "list/T1348654151579"
+  },
+  {
+    "title": "笑话",
+    "channelType": 0,
+    "isFix": 0,
+    "isSubscible": 0,
+    "url": "list/T1350383429665"
+  },
+  {
+    "title": "汽车",
+    "channelType": 0,
+    "isFix": 0,
+    "isSubscible": 0,
+    "url": "list/T1348654060988"
+  }
+]
