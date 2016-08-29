@@ -33,14 +33,11 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoHolder>
     public VideoAdapter(List<VideoListBean.V9LG4B3A0Bean> data, Fragment fragment) {
         this.data = data;
         this.fragment = fragment;
+        inflater = LayoutInflater.from(fragment.getActivity());
     }
 
     @Override
     public VideoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (inflater == null) {
-            inflater = LayoutInflater.from(parent.getContext());
-        }
-
         View view = inflater.inflate(R.layout.item_video, parent, false);
         return new VideoHolder(view);
     }

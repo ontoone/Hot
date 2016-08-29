@@ -5,8 +5,8 @@ import com.mansoul.hot.common.CommonLoadCallback;
 import com.mansoul.hot.http.API;
 import com.mansoul.hot.http.manager.HttpManager;
 import com.mansoul.hot.http.service.NetService;
-import com.mansoul.hot.module.news.model.bean.NewsListBean;
 import com.mansoul.hot.module.video.model.bean.VideoListBean;
+import com.orhanobut.logger.Logger;
 
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -21,6 +21,8 @@ public class VideoListImp implements IVideoList {
         String cacheControl = HttpManager.getInstance().getCacheControl();
 
         NetService service = HttpManager.getInstance().getRetrofit(API.VIDEO_BASE_URL);
+
+        Logger.d(startPage + "");
 
         service.getVideoList(cacheControl, startPage)
                 .subscribeOn(Schedulers.io())
@@ -38,6 +40,7 @@ public class VideoListImp implements IVideoList {
 
                     @Override
                     public void onNext(VideoListBean videoListBean) {
+                        Logger.d("加载成功");
                         callback.onSuccess(videoListBean);
                     }
                 });

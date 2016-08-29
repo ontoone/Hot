@@ -129,6 +129,7 @@ public class PhotoListViewFragment extends BaseFragment implements IPhotoListVie
     public void loadError() {
         if (isLoadMore) {   //加载更多失败
             isLoadMore = false;
+            page -= 1;
             mRefreshLayout.setRefreshing(false);
         } else if (isRefresh) {  //下拉刷新失败
             isRefresh = false;

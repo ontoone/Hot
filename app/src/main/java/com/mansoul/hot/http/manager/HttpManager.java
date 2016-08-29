@@ -39,7 +39,11 @@ public class HttpManager {
     private Interceptor mRewriteCacheControlInterceptor = new Interceptor() {
         @Override
         public Response intercept(Chain chain) throws IOException {
-            Request request = chain.request();
+            Request request = chain.request()
+                    .newBuilder()
+                    //解决403错误
+                    .addHeader("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36")
+                    .build();
             if (!NetUtil.isConnected(MyApplication.getInstance())) {
                 request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build();
                 Logger.e("no network");
@@ -53,7 +57,7 @@ public class HttpManager {
                         .removeHeader("Pragma").build();
             } else {
                 return originalResponse.newBuilder()
-                        .header("Cache-Control", "public, only-if-cached," + CACHE_STALE_SEC)
+                        .addHeader("Cache-Control", "public, only-if-cached," + CACHE_STALE_SEC)
                         .removeHeader("Pragma").build();
             }
         }
@@ -112,6 +116,4 @@ public class HttpManager {
                 .create(NetService.class);
 
     }
-
-
 }

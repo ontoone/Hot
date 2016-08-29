@@ -45,7 +45,6 @@ public class VideoFragment extends BaseFragment implements XRecyclerView.Loading
 
     private VideoListPresenter presenter;
 
-
     private int startPage = 0;
 
     @Override
@@ -60,6 +59,7 @@ public class VideoFragment extends BaseFragment implements XRecyclerView.Loading
 
     @Override
     protected void initView() {
+        loading();
         LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -89,23 +89,22 @@ public class VideoFragment extends BaseFragment implements XRecyclerView.Loading
 
     @Override
     public void loadSuccess(VideoListBean data) {
+        System.out.println(data.V9LG4B3A0.get(0).title);
         if (isRefresh) {
             isRefresh = false;
             mRecyclerView.refreshComplete();
-
-            if (!data.V9LG4B3A0.get(0).title.equals(first)) {
+            if (!data.V9LG4B3A0.get(1).title.equals(first)) {
                 mResults.clear();
                 mResults.addAll(data.V9LG4B3A0);
                 mAdapter.notifyDataSetChanged();
             } else {
                 ToastUtil.showShort(mContext, "当前为最新数据");
             }
-
         } else if (isLoadMore) {
             isLoadMore = false;
-            mRecyclerView.loadMoreComplete();
-
             mResults.addAll(data.V9LG4B3A0);
+
+            mRecyclerView.loadMoreComplete();
             mAdapter.notifyDataSetChanged();
         } else {
             mProgressBar.setVisibility(View.GONE);
@@ -115,7 +114,7 @@ public class VideoFragment extends BaseFragment implements XRecyclerView.Loading
             mAdapter = new VideoAdapter(mResults, this);
             mRecyclerView.setAdapter(mAdapter);
 
-            first = data.V9LG4B3A0.get(0).title;
+            first = data.V9LG4B3A0.get(1).title;
             isEmpty = false;
 
         }
@@ -125,6 +124,7 @@ public class VideoFragment extends BaseFragment implements XRecyclerView.Loading
     public void onRefresh() {
         isRefresh = true;
         presenter.getVideoList(0);
+
     }
 
     @Override
@@ -138,6 +138,7 @@ public class VideoFragment extends BaseFragment implements XRecyclerView.Loading
     public void loadError() {
         if (isLoadMore) {   //加载更多失败
             isLoadMore = false;
+            startPage -= 1;
             mRecyclerView.loadMoreComplete();
         } else if (isRefresh) {  //下拉刷新失败
             isRefresh = false;
