@@ -23,35 +23,5 @@ public class BasePresenter<T extends BaseIView, V> implements CommonLoadCallback
     public void onError() {
         view.loadError();
     }
-//
-//
-//    public CommonLoadCallback<B> callback = new CommonLoadCallback<B>() {
-//        @Override
-//        public void onSuccess(B resultBean) {
-//            view.loadSuccess(resultBean);
-//        }
-//
-//        @Override
-//        public void onError() {
-//            view.loadError();
-//        }
-//    };
-//
-//    public CommonLoadCallback<List<B>> listCallback = new CommonLoadCallback<List<B>>() {
-//        @Override
-//        public void onSuccess(List<B> resultBean) {
-//            view.loadSuccess(resultBean);
-//        }
-//
-//        @Override
-//        public void onError() {
-//            view.loadError();
-//        }
-//    };
 
-//    public void getData(String count, String page) {
-//        data.getData(count, page, callback);
-//    }
-
-//    public abstract void initData();
 }

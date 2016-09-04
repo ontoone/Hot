@@ -6,4 +6,9 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+    <dimen name="about_title">15sp</dimen>
+    <dimen name="about_sign">14sp</dimen>
+    <dimen name="about_content">13sp</dimen>
 </resources>

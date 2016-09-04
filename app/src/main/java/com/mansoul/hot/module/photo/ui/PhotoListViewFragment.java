@@ -65,7 +65,9 @@ public class PhotoListViewFragment extends BaseFragment implements IPhotoListVie
         mRefreshLayout.setColorSchemeResources(R.color.colorAccent);
         mRefreshLayout.setOnRefreshListener(this);
 
-        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
+        mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -169,7 +171,6 @@ public class PhotoListViewFragment extends BaseFragment implements IPhotoListVie
             mRefreshLayout.setRefreshing(false);
         } else if (isRefresh) {      //下拉刷新成功
             isRefresh = false;
-            mRefreshLayout.setRefreshing(false);
             if (!resultsBean.results.get(1).url.equals(firstUrl)) {
                 mResults.clear();
                 mResults.addAll(resultsBean.results);
@@ -177,6 +178,7 @@ public class PhotoListViewFragment extends BaseFragment implements IPhotoListVie
             } else {
                 ToastUtil.showShort(mContext, "当前为最新数据");
             }
+            mRefreshLayout.setRefreshing(false);
         } else {                    //第一次进入页面加载数据成功
             mProgressBar.setVisibility(View.GONE);
             mRecyclerView.setVisibility(View.VISIBLE);

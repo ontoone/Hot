@@ -1,6 +1,7 @@
 package com.mansoul.hot.module.photo.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +12,17 @@ import android.widget.ProgressBar;
 import com.mansoul.hot.R;
 import com.mansoul.hot.http.LoadImage;
 import com.mansoul.hot.module.photo.model.bean.PhotoListBean;
+import com.mansoul.hot.widget.ScaleImageView;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Mansoul on 16/8/11.
@@ -68,7 +75,6 @@ public class PhotoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         if (holder instanceof PhotoListHolder) {
             ImageView imageView = ((PhotoListHolder) holder).girl;
             LoadImage.getInstance().display(context, results.get(position).url, imageView);
-
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -1,7 +1,7 @@
 package com.mansoul.hot.util;
 
 import com.mansoul.hot.module.news.ui.NewsFragment;
-import com.mansoul.hot.SettingsFragment;
+import com.mansoul.hot.module.about.view.About;
 import com.mansoul.hot.module.video.ui.VideoFragment;
 import com.mansoul.hot.module.photo.ui.PhotoListViewFragment;
 import com.mansoul.hot.base.BaseFragment;
@@ -28,7 +28,7 @@ public class FragmentFactory {
                     fragment = new VideoFragment();
                     break;
                 case 3:
-                    fragment = new SettingsFragment();
+                    fragment = new About();
                     break;
             }
             fragments.put(id, fragment);
