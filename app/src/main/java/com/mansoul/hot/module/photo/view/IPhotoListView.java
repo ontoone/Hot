@@ -7,5 +7,5 @@ import com.mansoul.hot.module.photo.model.bean.PhotoListBean;
  * Created by Mansoul on 16/8/10.
  */
 public interface IPhotoListView extends BaseIView<PhotoListBean> {
-//    void loadSuccess(PhotoListBean data);
+    void loadSuccess(PhotoListBean data);
 }

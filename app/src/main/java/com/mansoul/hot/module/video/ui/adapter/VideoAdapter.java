@@ -12,7 +12,6 @@ import com.mansoul.hot.http.LoadImage;
 import com.mansoul.hot.module.video.model.bean.VideoListBean;
 
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -73,7 +72,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoHolder>
         JCVideoPlayerStandard mVideoPlayer;
         @BindView(R.id.topic_img)
         CircleImageView mImg;
-        @BindView(R.id.tv_source)
+        @BindView(R.id.news_source)
         TextView mVideoSource;
 
         public VideoHolder(View itemView) {

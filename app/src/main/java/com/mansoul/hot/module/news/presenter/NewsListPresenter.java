@@ -1,6 +1,5 @@
 package com.mansoul.hot.module.news.presenter;
 
-import com.mansoul.hot.common.CommonLoadCallback;
 import com.mansoul.hot.module.news.model.INewsList;
 import com.mansoul.hot.module.news.model.NewsListImp;
 import com.mansoul.hot.module.news.model.bean.NewsListBean;
@@ -21,16 +20,18 @@ public class NewsListPresenter {
         this.view = view;
     }
 
-    private CommonLoadCallback<NewsListBean> callback = new CommonLoadCallback<NewsListBean>() {
+    private INewsList.CallBack callback = new INewsList.CallBack() {
         @Override
-        public void onSuccess(NewsListBean resultBean) {
-            view.loadSuccess(resultBean);
+        public void onSuccess(List<NewsListBean.bean> result) {
+            view.loadSuccess(result);
         }
 
         @Override
         public void onError() {
             view.loadError();
         }
+
+        ;
     };
 
     public void getData(String type, int page) {

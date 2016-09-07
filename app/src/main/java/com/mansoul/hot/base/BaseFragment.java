@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Mansoul on 16/8/11.
  */
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     private boolean isViewInitiated;
     private boolean isVisibleToUser;

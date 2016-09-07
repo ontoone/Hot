@@ -9,7 +9,7 @@ public interface BaseIView<T> {
     void loading();
 
     //    //加载完成
-    void loadSuccess(T data);
+//    void loadSuccess(T data);
 //
 //    void loadSuccess(List<T> data);
 
