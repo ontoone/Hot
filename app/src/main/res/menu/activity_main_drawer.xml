@@ -6,19 +6,19 @@
             android:id="@+id/nav_news"
             android:checked="true"
             android:icon="@drawable/ic_news_black"
-            android:title="新闻" />
+            android:title="新闻"/>
         <item
             android:id="@+id/nav_photo"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="美图" />
+            android:title="图片"/>
         <item
             android:id="@+id/nav_video"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="视频" />
+            android:title="视频"/>
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_manage"
-            android:title="关于" />
+            android:title="关于"/>
     </group>
 
     <!--<item android:title="Communicate">-->

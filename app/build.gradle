@@ -58,7 +58,7 @@ dependencies {
 
     compile 'fm.jiecao:jiecaovideoplayer:4.6.3'
 
-    compile 'me.wangyuwei:ParticleView:1.0.0'
+    compile 'me.wangyuwei:ParticleView:1.0.3'
     
     compile 'de.hdodenhof:circleimageview:2.1.0'
 

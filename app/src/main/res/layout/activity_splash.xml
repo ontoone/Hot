@@ -1,53 +1,21 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:pv="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="@color/colorPrimary"
     tools:context="com.mansoul.hot.SplashActivity">
-    <FrameLayout
+
+    <me.wangyuwei.particleview.ParticleView
+        android:id="@+id/pv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        pv:pv_background_color="@color/colorPrimary"
+        pv:pv_host_text="Hot"
+        pv:pv_particle_text="News"
+        pv:pv_particle_text_size="14sp"
+        pv:pv_text_color="#FFF"/>
 
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="?metaButtonBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-            <Button
-                android:id="@+id/dummy_button"
-                style="?metaButtonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
-
-        </LinearLayout>
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/fullscreen_content"
-        android:background="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:fitsSystemWindows="true"
-        android:layout_height="match_parent">
-
-        <me.wangyuwei.particleview.ParticleView
-            android:id="@+id/pv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            pv:pv_background_color="@color/colorPrimary"
-            pv:pv_host_text="Hot"
-            pv:pv_particle_text="News"
-            pv:pv_particle_text_size="14sp"
-            pv:pv_text_color="#FFF" />
-    </LinearLayout>
-
-
-</FrameLayout>
+</RelativeLayout>
