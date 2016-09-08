@@ -24,10 +24,8 @@ public class SplashActivity extends AppCompatActivity {
         mParticleView.setOnParticleAnimListener(new ParticleView.ParticleAnimListener() {
             @Override
             public void onAnimationEnd() {
-
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
-
             }
         });
     }
