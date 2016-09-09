@@ -1,5 +1,6 @@
 package com.mansoul.hot.http.service;
 
+import com.mansoul.hot.module.news.model.bean.NewsDetailBean;
 import com.mansoul.hot.module.news.model.bean.NewsListBean;
 import com.mansoul.hot.module.photo.model.bean.PhotoListBean;
 import com.mansoul.hot.module.video.model.bean.VideoListBean;
@@ -26,6 +27,12 @@ public interface NetService {
             @Header("Cache-Control") String cacheControl,
             @Path("type") String type,
             @Path("page") int page);
+
+    //获取新闻详情 C0H8BL0K00963VRO/full.html
+    @GET("{newsId}/full.html")
+    Observable<NewsDetailBean> getNewsDetail(
+            @Header("Cache-Control") String cacheControl,
+            @Path("newsId") String newsId);
 
     //list/V9LG4B3A0/n/0-10.html
     //获取视频列表

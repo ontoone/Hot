@@ -1,6 +1,7 @@
 package com.mansoul.hot.module.news.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mansoul.hot.R;
+import com.mansoul.hot.common.Constant;
 import com.mansoul.hot.http.LoadImage;
 import com.mansoul.hot.module.news.model.bean.NewsListBean;
-import com.mansoul.hot.util.ToastUtil;
+import com.mansoul.hot.module.news.ui.NewsDetailActivity;
 
 import java.util.ArrayList;
 
@@ -51,7 +53,10 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsLi
         holder.mDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showShort(mContext, position + "被点击了");
+                String postid = mData.get(position).postid;
+                Intent intent = new Intent(mContext, NewsDetailActivity.class);
+                intent.putExtra(Constant.NEWS_DETAIL_ID, postid);
+                mContext.startActivity(intent);
             }
         });
     }

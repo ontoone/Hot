@@ -62,4 +62,6 @@ dependencies {
     
     compile 'de.hdodenhof:circleimageview:2.1.0'
 
+    compile 'zhou.widget:richtext:1.0.4'
+
 }

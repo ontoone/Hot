@@ -31,7 +31,6 @@ public class NewsListPresenter {
             view.loadError();
         }
 
-        ;
     };
 
     public void getData(String type, int page) {

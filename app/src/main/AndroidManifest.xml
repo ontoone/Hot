@@ -33,7 +33,6 @@
             android:name=".module.photo.ui.PhotoViewActivity"
             android:label="@string/title_activity_photo_view"
             android:theme="@style/MyTheme"/>
-
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
@@ -44,6 +43,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".module.news.ui.NewsDetailActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/MyTheme"/>
     </application>
 
 </manifest>
